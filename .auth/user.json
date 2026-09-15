@@ -1,0 +1,18 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "https://thenomadnova.com",
+      "localStorage": [
+        {
+          "name": "authToken",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODkxMWIyODliMTM4M2RkOWJlMDRiYyIsImVtYWlsIjoibG9rZXNoMTEzQGdtYWlsLmNvbSIsImlhdCI6MTc4OTExNjE2NywiZXhwIjoxNzkxNzA4MTY3fQ.cwFUMOJQFycZm3XFUR8EQW_BsyWTEm1u6e57KKkeN6M"
+        },
+        {
+          "name": "user",
+          "value": "{\"id\":\"6a8911b289b1383dd9be04bc\",\"fullName\":\"Lokesh113\",\"email\":\"lokesh113@gmail.com\",\"coins\":0,\"level\":1,\"isPremium\":false,\"isPremiumActive\":false,\"premiumPlans\":{\"web\":{\"active\":false},\"mobile\":{\"active\":false}}}"
+        }
+      ]
+    }
+  ]
+}

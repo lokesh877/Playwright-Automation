@@ -1,0 +1,10 @@
+[
+    {
+        "testname" : "Login",
+        "email" : "Lokesh113@gmial.com",
+        "password" : "Lokesh113@123",
+        "expected_result" : "Login Successful"
+
+
+    }
+]
