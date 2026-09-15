@@ -1,4 +1,3 @@
-import { execArgv } from "process";
 
 class PostTrip {
   constructor(page) {
@@ -23,7 +22,22 @@ class PostTrip {
     this.description = page.getByPlaceholder("Describe your trip...");
     this.imageupload = page.locator('input[type="file"]');
     this.posttripbutton = page.locator("form").getByRole("button", { name: "Post Trip", exact: true });
-    this.finalconsent = page.locator("form").getByRole("button", {name : "I Understand, Post Trip"})
+    this.safetyWarning = page
+     .locator("div.bg-white.rounded-2xl")
+     .filter({
+      hasText: "Safety Warning"
+     });
+
+    this.cancelWarning = this.safetyWarning.getByRole("button", {
+      name: "Cancel",
+      exact: true
+    });
+
+    this.finalConsent = this.safetyWarning.getByRole("button", {
+      name: "I Understand, Post Trip",
+      exact: true
+    });
+
   }
   async goto() {
     await this.page.goto("https://thenomadnova.com/dashboard");
@@ -41,15 +55,18 @@ class PostTrip {
     await this.budget.fill(budget);
     await this.currpeople.fill(currpeople);
     await this.lookingfor.fill(lookingfor);
-    await this.comfartablewith.click(comfortablewith);
+    await this.comfartablewith.click();
     await this.tripcat.selectOption(category);
     await this.accomodation.selectOption(accomodation);
     await this.description.fill(description);
     await this.imageupload.setInputFiles(image);
-    await this.imageupload.toHaveValue("Change Image");
     await this.posttripbutton.click();
-    await this.finalconsent.toHaveValue("Safety Warning");
-    await this.finalconsent.click();
+    await this.safetyWarning.waitFor({
+      state: "visible"
+    });
+    //await this.cancelWarning.click();
+    await this.finalConsent.click();
+    
   }
 }
 

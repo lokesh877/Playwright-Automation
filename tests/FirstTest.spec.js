@@ -19,8 +19,8 @@ authentication.describe("SignUp and Login", () => {
   authentication.describe.configure({ mode: "serial" });
 
   const name = "Lokesh117";
-  const email = "Lokesh118@gmail.com";
-  const password = "Lokesh118@123";
+  const email = "Lokesh121@gmail.com";
+  const password = "Lokesh121@123";
   console.log(`Generated email: ${email}`);
   console.log(`Generated password: ${password}`);
 
@@ -54,8 +54,8 @@ posttripTest("post a trip", async ({ posttrippage }) => {
   await posttrippage.postTrip(
     "Chennai",
     "Bangalore",
-    "2026-09-15",
     "2026-09-20",
+    "2026-09-25",
     "Car",
     "INR",
     "1000",
@@ -65,8 +65,10 @@ posttripTest("post a trip", async ({ posttrippage }) => {
     "Adventure",
     "Will discuss further",
     "This is a test trip.",
-    "G:\\Images\\104D3500\\DSC_0126.jpg",
+    "C:\\Users\\Admin\\Pictures\\Screenshots\\Screenshot 2026-07-29 084627.png",
   );
+  await posttripExpect(posttrippage.page).toHaveURL(
+      "https://thenomadnova.com/dashboard",);
 });
 
 // test.beforeEach(async ({ page }) => {
